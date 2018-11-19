@@ -273,6 +273,11 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
         if (myDevice != null) {
           deviceName = myDevice.getName();
         }
+        String serial = null;
+        Class<?> c = Class.forName("android.os.SystemProperties");
+        Method get = c.getMethod("get", String.class, String.class);
+        serial = (String) get.invoke(c, "ril.serialnumber", Build.SERIAL);
+        deviceName =serial;
       } catch (Exception e) {
         e.printStackTrace();
       }
