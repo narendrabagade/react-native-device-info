@@ -39,7 +39,7 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.lang.Runtime;
 import java.net.NetworkInterface;
-
+import java.lang.reflect.Method;
 import javax.annotation.Nullable;
 
 public class RNDeviceModule extends ReactContextBaseJavaModule {
